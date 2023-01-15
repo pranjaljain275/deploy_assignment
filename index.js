@@ -8,10 +8,11 @@ const { connectionDB } = require("./config/db");
 const { userRoute } = require("./controllers/users.route");
 
 app.use(express.json());
+app.use(cors());
 app.use("/", userRoute);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Mini Project." });
+  res.send({ message: "Welcome to Mini Project." });
 });
 
 // listen
